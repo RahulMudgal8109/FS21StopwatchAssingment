@@ -24,20 +24,20 @@ function startClock() {
         console.log(mSecs);
         if (mSecs > 99) {
             mSecs = 0;
-            miliseconds.textContent = "00";
+            miliseconds.innerText = "00";
             if (secs >= 59) {
                 secs = 0;
-                seconds.textContent = "00";
+                seconds.innerText = "00";
                 if (mins > 59 && sec > 59) {
                     mins = 0;
-                    minutes.textContent = `00`;
+                    minutes.innerText = `00`;
                     hrs++;
-                    hours.textContent = `${parseInt(hours.textContent) + 1} ${+ ":"}`;
+                    hours.innerText = `${parseInt(hours.innerText) + 1} ${+ ":"}`;
                 }
                 else {
                     mins += 1;
                     if (mins < 9) {
-                        minutes.textContent = `0${parseInt(minutes.textContent) + 1}`;
+                        minutes.innerText = `0${parseInt(minutes.innerText) + 1}`;
                     }
                     else {
 
@@ -47,16 +47,16 @@ function startClock() {
             else {
                 secs += 1;
                 if (secs > 9) {
-                    seconds.textContent = `${parseInt(seconds.textContent) + 1}`;
+                    seconds.innerText = `${parseInt(seconds.innerText) + 1}`;
                 }
                 else {
-                    seconds.textContent = `0${parseInt(seconds.textContent) + 1}`;
+                    seconds.innerText = `0${parseInt(seconds.innerText) + 1}`;
                 }
             }
         }
         else {
             mSecs += 1;
-            miliseconds.textContent = parseInt(miliseconds.textContent) + 1;
+            miliseconds.innerText = parseInt(miliseconds.innerText) + 1;
         }
     }, 10)
 }
@@ -75,10 +75,10 @@ function resetClock()
     start.disabled=false;
     stop.classList.remove("nonActive");
     start.classList.remove("nonActive");
-    miliseconds.textContent = "00";
-    seconds.textContent = "00";
-    minutes.textContent = "00";
-    hours.textContent = "00";
+    miliseconds.innerText = "00";
+    seconds.innerText = "00";
+    minutes.innerText = "00";
+    hours.innerText = "00";
 
 
 }
